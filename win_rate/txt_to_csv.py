@@ -41,8 +41,8 @@ def main():
     left_models = []
     right_models = []
     wr = [] 
-    file=open('win_rate/data/exp2.txt')
-    save_path = 'win_rate/csv/exp2'
+    file=open('win_rate/data/exp1.txt')
+    save_path = 'win_rate/csv/exp1'
 
     for line in file.readlines():  
         curLine=line.split(",")
