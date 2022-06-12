@@ -1,8 +1,5 @@
-
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 
 def export(data, models, save_path, model_sort=False, check=True, vector=False):
@@ -32,12 +29,10 @@ def export(data, models, save_path, model_sort=False, check=True, vector=False):
     res.to_csv(save_path+'.csv')
 
 
-
 def main():
     models = []
     # optional
     models = ['0601a_10', '0601a_30', '0601a_50', '0601a_70', '0601a_90', '0601a_110', '0601a_130', '0601a_150']
-        
     left_models = []
     right_models = []
     wr = [] 
@@ -50,16 +45,13 @@ def main():
         rm = curLine[1].strip(" ')")
         left_models.append(lm)
         right_models.append(rm)
-
         if lm not in models:
             models.append(lm)
         if rm not in models:
             models.append(rm)
-        
         wr.append(curLine[2].strip(" win_rate: "))
 
     data = zip(left_models, right_models, wr)
-
     export(data, models, save_path, model_sort=False, check=True, vector=False)
     
 
