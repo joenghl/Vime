@@ -14,11 +14,11 @@ Step2: Run `txt_to_fig.py` to get the heatmap visualization, and run `txt_to_csv
 
 ## Components
 ### Win Rate
-- **check**: It will compute the win rate automatically according to the data in contraposition if the data is missing.
+- `check`: It will compute the win rate automatically according to the data in contraposition if the data is missing.
 
-- **model_sort**: Sort the models name alphabetically.
+- `model_sort`: Sort the models name alphabetically.
 
-- **vector**: Whether save the vectorgraph.
+- `vector`: Whether save the vectorgraph.
 
 ## Todo
 - Primary v.s. All visulization
