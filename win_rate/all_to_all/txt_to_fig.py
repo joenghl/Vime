@@ -30,9 +30,10 @@ def export(data, models, save_path, model_sort=False, check=True, vector=False):
     res = pd.DataFrame(wr_mat, columns=models, index=models)
     plt.figure(figsize=(10,8))
     plt.title('Row v.s. Col')
+    sns.set_palette("muted")
     ax = sns.heatmap(res, annot=True, fmt='.2f')
     if vector:
-        plt.savefig(np.save+',eps', dpi=600, format='eps')
+        plt.savefig(save_path+'.eps', dpi=600, format='eps')
     else:
         plt.savefig(save_path)
     plt.show()
@@ -46,8 +47,8 @@ def main():
     left_models = []
     right_models = []
     wr = [] 
-    file=open('win_rate/data/exp2.txt')
-    save_path = 'win_rate/fig/exp2'
+    file=open('win_rate/all_to_all/data/exp2.txt')
+    save_path = 'win_rate/all_to_all/fig/exp2'
 
     for line in file.readlines():  
         curLine=line.split(",")
